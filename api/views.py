@@ -17,6 +17,8 @@ class Chat(APIView):
 
     def post(self, request):
         message = json.loads(request.body.decode('utf-8'))["message"]
+        if message == "restart":
+            Chat.state = "GREETING"
         res, Chat.state, Chat.suggested_protocol_pool, Chat.buttons = main.information_retrieval_module(Chat.state, message, Chat.suggested_protocol_pool)
         if Chat.state != Chat.FINAL_STATE:
             return Response({"status": "success", "response": res, "buttons": Chat.buttons},
