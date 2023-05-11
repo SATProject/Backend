@@ -14,7 +14,7 @@ class Chat(APIView):
     FINAL_STATE = "END2"
     buttons = []
     suggested_protocol_pool = []
-
+  
     def post(self, request):
         message = json.loads(request.body.decode('utf-8'))["message"]
         if message == "restart":
