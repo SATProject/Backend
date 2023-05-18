@@ -23,4 +23,4 @@ class Chat(APIView):
         if Chat.state != Chat.FINAL_STATE:
             return Response({"status": "success", "response": res, "buttons": Chat.buttons},
                             status=status.HTTP_200_OK)
-        return Response({"status": "success", "response":  "امیدوارم تونسته باشم کمکت کنم.", "buttons": Chat.buttons}, status=status.HTTP_200_OK)
+        return Response({"status": "end", "response":  "امیدوارم تونسته باشم کمکت کنم.", "buttons": Chat.buttons}, status=status.HTTP_200_OK)
