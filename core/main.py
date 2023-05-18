@@ -518,7 +518,7 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
     # Protocol Suggesting
     elif state == "PROTOCOL_SUGGESTING":
         if len(suggested_protocol_pool) > 0:
-            random.shuffle(suggested_protocol_pool)
+            random.shuffle(suggested_protocol_pool) 
             current_protocol = suggested_protocol_pool.pop(0)
             return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num
         else:
