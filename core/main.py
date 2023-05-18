@@ -533,7 +533,10 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         if yes_no_detection(message) == "YES":
             return "لطفا انجامش بده و بعد بهم بگو که حالت بهتره؟", "PROTOCOL_SUGGESTING3", suggested_protocol_pool, ["هنوز خوب نیستم", "بهترم"], addtionals_lst, addtional_num
         if yes_no_detection(message) == "NO":
-            return "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟", "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            if len(suggested_protocol_pool) > 0:
+                return "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟", "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            else:
+                return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
 
     elif state == "PROTOCOL_SUGGESTING_AGAIN":
         if yes_no_detection(message) == "YES":
@@ -548,7 +551,10 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         
     # Protocol Suggesting
     elif state == "PROTOCOL_SUGGESTING3":
-        return "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟", "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+        if len(suggested_protocol_pool) > 0:
+            return "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟", "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+        else:
+            return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
 
     # Thank user
     elif state == "END":
