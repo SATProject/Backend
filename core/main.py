@@ -554,18 +554,3 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         return "امیدوارم تونسته باشم کمکت کنم.", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
     return
 
-
-# def user_input(state):
-#     if state == 0: # Greeting
-#         return input()
-#     elif state == 1: # Feeling
-#         return input()
-#     elif state == 2:
-#         return input()
-#     elif state == 3:
-#         print("۱. آره تازه بوده")
-#         print("۲. نه برای خیلی وقت پیشه.")
-#         return input("شماره ۱ یا ۲ رو وارد کنید.\n")
-#     elif state == 4:
-#         return
-#     return
