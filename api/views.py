@@ -14,12 +14,14 @@ class Chat(APIView):
     FINAL_STATE = "END2"
     buttons = []
     suggested_protocol_pool = []
+    additionals = []
+    addtional_num = 0
   
     def post(self, request):
         message = json.loads(request.body.decode('utf-8'))["message"]
         if message == "restart":
             Chat.state = "GREETING"
-        res, Chat.state, Chat.suggested_protocol_pool, Chat.buttons = main.information_retrieval_module(Chat.state, message, Chat.suggested_protocol_pool)
+        res, Chat.state, Chat.suggested_protocol_pool, Chat.buttons, Chat.additionals, Chat.addtional_num = main.information_retrieval_module(Chat.state, message, Chat.suggested_protocol_pool, Chat.additionals, Chat.addtional_num)
         if Chat.state != Chat.FINAL_STATE:
             return Response({"status": "success", "response": res, "buttons": Chat.buttons},
                             status=status.HTTP_200_OK)
