@@ -132,7 +132,7 @@ additionals =  [
         "آیا اخیرا حس حسادت یا حرص داشتی",
         "آیا تازگیا حس حسادت یا حرص داشتی"
         ], 
-        "YES":[16, 18, 19], "NO":[16]
+        "YES":[15, 17, 18], "NO":[15]
     },
     {
     "questions": [ 
@@ -141,14 +141,14 @@ additionals =  [
         "آیا احساس می‌کنی که باید برای یک فرد دیگه نجات‌دهنده باشی؟",
         "آیا احساس می‌کنی که باید برای یک فرد دیگه ناجی باشی؟"
         ], 
-        "YES":[12, 21, 25], "NO":[16]
+        "YES":[11, 20, 24], "NO":[15]
     },
     {
     "questions": [ 
         "آیا احساس این رو داری که قربانی یه نفر دیگه هستی؟",
         "آیا احساس اینو داری که قربانی یه نفره دیگه‌ای؟"
         ], 
-        "YES":[12, 21, 25], "NO":[16]
+        "YES":[11, 20, 24], "NO":[15]
     },
     {
     "questions": [ 
@@ -157,7 +157,7 @@ additionals =  [
         "آیا حس قربانی شدن برای یه نفر دیگه رو داری؟",
         "آیا حس فدا شدن برای یه نفر دیگه رو داری؟"
         ], 
-        "YES":[12, 21, 25], "NO":[16]
+        "YES":[11, 20, 24], "NO":[15]
     },
     {
     "questions": [ 
@@ -166,7 +166,7 @@ additionals =  [
         "آیا احساس اینو داری که شخص دیگه‌ای رو کنترل می‌کنی یا بهش جهت میدی؟",
         "آیا حس می‌کنی که شخص دیگه‌ای رو کنترل می‌کنی یا بهش جهت میدی؟"
         ], 
-        "YES":[12, 21, 25], "NO":[16]
+        "YES":[11, 20, 24], "NO":[15]
     },
     {
     "questions": [ 
@@ -174,14 +174,14 @@ additionals =  [
         "آیا همیشه وقتی که چیزی بد پیش میره خودتو متهم می‌کنی؟",
         "آیا همیشه وقتی که چیزی بد پیش میره خودتو مقصر می‌دونی"
         ], 
-        "YES":[12, 21, 25], "NO":[16]
+        "YES":[11, 20, 24], "NO":[15]
     },
     {
     "questions": [ 
         "آیا همیشه نقطه نظرات دیگران رو توی کارات در نظر می‌گیری؟",
         "آیا همیشه نظرات دیگران رو توی کارات در نظر می‌گیری؟"
         ], 
-        "YES":[16], "NO":[16, 21]
+        "YES":[15], "NO":[15, 20]
     },
     {
     "questions": [ 
@@ -189,7 +189,7 @@ additionals =  [
         "آیا فکر می‌کنی که داری به سمت یه بحران شخصیتی پیش میری؟",
         "آیا فکر می‌کنی که داری به یه بحران شخصیتی نزدیک میشی؟"
         ], 
-        "YES":[16, 26], "NO":[16]
+        "YES":[15, 25], "NO":[15]
     }
 ]
 
@@ -394,6 +394,7 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
     global emotion
     ## Greeting 
     if state == "GREETING": 
+        print(len(protocol_titles), len(protocols))
         b = shuffle_lst(additionals)
         return random.choice(greeting), "FEELING", suggested_protocol_pool, ["سلام", "درود"], additionals, b
 
@@ -439,7 +440,7 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         if check_emotion_positiveness(emotion) == "POS":
             return random.choice(if_need_any_protocols), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
         elif check_emotion_positiveness(emotion) == "NEG":
-            suggested_protocol_pool.extend([18, 19, 8, 17, 16])
+            suggested_protocol_pool.extend([17, 18, 7, 16, 15])
             return random.choice(event), "EVENT", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
         else:
             return "فکر می‌کنم مشکلی پیش اومده.", "FEELING", suggested_protocol_pool, ["مشکلی نیست"], addtionals_lst, addtional_num
@@ -447,7 +448,7 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
     # Ask if user needs any protocols (in case of happiness)?
     elif state == "IF_NEED_ANY_PROTOCOLS":
         if yes_no_detection(message) == "YES":
-            suggested_protocol_pool.extend([16, 22, 8, 9, 18, 19, 13, 14, 15, 27, 20, 23, 24])
+            suggested_protocol_pool.extend([15, 21, 7, 8, 17, 18, 12, 13, 14, 26, 19, 22, 23])
             random.shuffle(suggested_protocol_pool)
             current_protocol = suggested_protocol_pool.pop(0)
             return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num
@@ -459,13 +460,13 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         if yes_no_detection(message) == "YES":
             return random.choice(time), "EVENT_TIME", suggested_protocol_pool, ["خیلی وقت پیش بوده", "اخیرا اتفاق افتاده"], addtionals_lst, addtional_num
         if yes_no_detection(message) == "NO":
-            suggested_protocol_pool.extend([10])
+            suggested_protocol_pool.extend([9])
             return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
 
     # Ask if event was recent?
     elif state == "EVENT_TIME":
         if check_event_time(message) == "RECENT":
-            suggested_protocol_pool.extend([10])
+            suggested_protocol_pool.extend([9])
             return "میتونم ازت بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
         if check_event_time(message) == "NOT_RECENT":
             return "آیا تمرین ۱۰ باعث ناراحتی شما می‌شود؟" + protocol_generator(11), "PROTOCOL_10", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
@@ -473,10 +474,10 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
     # Ask if protocol 10 is distressing?
     elif state == "PROTOCOL_10":
         if yes_no_detection(message) == "YES":
-            suggested_protocol_pool.extend([16])
+            suggested_protocol_pool.extend([15])
             return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
         if yes_no_detection(message) == "NO":
-            suggested_protocol_pool.extend([11])
+            suggested_protocol_pool.extend([10])
             return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
 
 
