@@ -24,6 +24,17 @@ sadness = [
     "خیر"
 ]
 
+friendly = [
+    "دوست",
+    "رفیق",
+    "صمیمی"
+]
+
+formal = [
+    "رسمی",
+    "فرمال",
+]
+
 negative_verbs = [
     "نیست",
     "ندار",
@@ -72,6 +83,24 @@ long_time = [
     "خیلی وقت پیش"
 ]
 
+formality = [
+    "دوست داری باهات رسمی صحبت کنم یا دوستانه؟",
+    "دوست داری چطوری با هم صحبت کنیم؟",
+    "دوست داری باهات چطوری صحبت کنم؟"
+]
+
+name_lst = [
+    "اسمت چیه؟",
+    "میشه اسمت رو بهم بگی؟",
+    "چی صدات کنم؟",
+]
+
+name_formal = [
+    "لطفا نامتان رو میگویید.",
+    "شما را چطور صدا کنم؟",
+    "اسمتان چیست؟",
+]
+
 
 greeting = [
     "سلام",
@@ -89,17 +118,17 @@ greeting = [
 ]
 
 feeling = [
-   "حالت چطوره؟",
-    "خوبی؟",
-    "چطوری؟",
-    "امروز حالت خوبه؟",
-    "امروز حالت چطوره؟",
-    "حالت خوبه؟",
-    "خوش احوالید؟",
-    "امروز چطوری؟",
-    "احوالت چطوره؟",
-    "امروز خوشحالی یا ناراحت؟",
-    "حالت چطوره دوست من؟"
+   "Y عزیز حالت چطوره؟",
+    "Y عزیز خوبی؟",
+    "خوبی Y؟"
+    "Y چطوری؟",
+    "Y عزیز امروز حالت خوبه؟",
+    "Y امروز حالت چطوره؟",
+    "Y عزیز حالت خوبه؟",
+    "Y امروز چطوری؟",
+    "Y عزیز احوالت چطوره؟",
+    "Y امروز خوشحالی یا ناراحت؟",
+    "Y عزیز حالت چطوره دوست من؟"
 ]
 
 emotion_verifier = [
@@ -118,15 +147,15 @@ tell_emotion = [
 ]
 
 if_need_any_protocols = [
-    "آیا نیاز به تمرینی برای بهبود حالت داری؟",
-    "آیا به تمرینی برای بهتر شدن حالت احتیاج داری؟",
-    "آیا حس می‌کنی احتیاج به تمرینی داشته باشی؟",
-    "آیا دوست داری تمرینی برای بهبود حالت انجام بدی؟",
-    "آیا نیاز داری تمرینی به تو معرفی کنم؟",
-    "آیا دوست داری تمرینی انجام دهی؟",
-    "حس میکنی به تمرینی برای بهبود حالت نیاز داری؟",
-    "حس میکنی با انجام تمرینی حالت بهتر میشود؟",
-    "حس میکنی برای بهبود حالت تمرینی نیاز داری؟"
+    "Y آیا نیاز به تمرینی برای بهبود حالت داری؟",
+    "Y عزیز آیا به تمرینی برای بهتر شدن حالت احتیاج داری؟",
+    "Y آیا حس می‌کنی احتیاج به تمرینی داشته باشی؟",
+    "Y عزیز آیا دوست داری تمرینی برای بهبود حالت انجام بدی؟",
+    "Y عزیز آیا نیاز داری تمرینی به تو معرفی کنم؟",
+    "Y آیا دوست داری تمرینی انجام بدی",
+    "Y عزیز حس میکنی به تمرینی برای بهبود حالت نیاز داری؟",
+    "Y حس میکنی با انجام تمرینی حالت بهتر میشه؟",
+    "Y عزیز حس میکنی برای بهبود حالت تمرینی نیاز داری؟"
 ]
 
 
@@ -200,7 +229,7 @@ additionals =  [
         "YES":[11, 20, 24], "NO":[15]
     },
     {
-    "questions": [ 
+    "questions": [  
         "آیا همیشه وقتی که چیزی بد پیش میره خودتو سرزنش می‌کنی؟",
         "آیا همیشه وقتی که چیزی بد پیش میره خودتو متهم می‌کنی؟",
         "آیا همیشه وقتی که چیزی بد پیش میره خودتو مقصر می‌دونی"
@@ -390,7 +419,7 @@ feelingـformal = [
 emotion_verifierـformal = [
     "آیا احساس X می‌کنید؟",
     "آیا حس X دارید؟",
-    "آیا حس میکنید X هستید؟",
+    "آیا حس میکنید Z هستید؟",
 ]
 
 tell_emotionـformal = [
@@ -431,10 +460,10 @@ eventـformal = [
 timeـformal = [
     "این اتفاق اخیرا رخ داده است یا مدت‌ها پیش؟",
     "به تازگی این اتفاق افتاده است؟",
-    "اخیرا این اتفاق پیش آمده است",
+    "اخیرا این اتفاق پیش آمده است؟",
     "این اتفاق برای چیزی است که اخیرا رخ داده یا مدت‌ها پیش اتفاق افتاده؟",
     "اخیرا این اتفاق رخ داده است؟",
-    "این اتفاق به تازگی رخ داده است؟",
+    "این اتفاق به تازگی رخ داده است؟", 
     "آیا این اتفاق مدت‌ها پیش رخ داده است؟"
 ]
 
@@ -595,46 +624,94 @@ def protocol_generator(p_num):
     return res
 
 
+def dof_checker(message):
+    for f in friendly:
+        if f in message:
+            return 0
+    for f in formal:
+        if f in message:
+            return 1
+
+
 emotion = ""
 
 
-def information_retrieval_module(state, message, suggested_protocol_pool, addtionals_lst, addtional_num):
+def information_retrieval_module(state, message, suggested_protocol_pool, addtionals_lst, addtional_num, name, dof):
     global emotion
     ## Greeting 
     if state == "GREETING": 
         print(len(protocol_titles), len(protocols))
         b = shuffle_lst(additionals)
-        return random.choice(greeting), "FEELING", suggested_protocol_pool, ["سلام", "درود"], additionals, b
+        if dof == 0:
+            return random.choice(greeting), "FORMALITY", suggested_protocol_pool, ["سلام", "درود"], additionals, b, name, dof
+        elif dof == 1:
+            return random.choice(greetingـformal), "FORMALITY", suggested_protocol_pool, ["سلام", "درود"], additionals, b, name, dof
+
+    ## Degree of Formality 
+    if state == "FORMALITY": 
+        return random.choice(formality), "NAME", suggested_protocol_pool, ["رسمی", "دوستانه"], additionals, addtional_num, name, dof
+
+    ## Name
+    if state == "NAME": 
+        dof = dof_checker(message)
+        if dof == 0:
+            return random.choice(name_lst), "FEELING", suggested_protocol_pool, [], additionals, addtional_num, name, dof
+        elif dof == 1:
+            if dof == 0:
+                return random.choice(feeling).replace("Y", name), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof
+            elif dof == 1:
+                return random.choice(feelingـformal), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof
+
 
     # Feeling 
     elif state == "FEELING": 
-        return random.choice(feeling), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num
+        name = message
+        print(name)
+        if dof == 0:
+            return random.choice(feeling).replace("Y", name), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof
+        elif dof == 1:
+            return random.choice(feelingـformal), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof
 
     # Ask if detected feeling is correct? 
     elif state == "EMOTION_VERIFIER":
         if sentiment_analysis(message) == "HAPPY":
             emotion = "HAPPY"
-            return random.choice(emotion_verifier).replace("X", "خوشحالی"), "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            if dof == 0:
+                return random.choice(emotion_verifier).replace("X", "خوشحالی"), "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
+            elif dof == 1:
+                return random.choice(emotion_verifierـformal).replace("X", "خوشحالی").replace("Z", "خوشحال"), "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
         elif sentiment_analysis(message) == "SAD":
             emotion = "SAD"
-            return random.choice(emotion_verifier).replace("X", "ناراحتی"), "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            if dof == 0:
+                return random.choice(emotion_verifier).replace("X", "ناراحتی"), "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
+            elif dof == 1:
+                return random.choice(emotion_verifierـformal).replace("X", "ناراحتی").replace("Z", "ناراحت"), "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
         elif sentiment_analysis(message) == "NEUTRAL":
-            emotion = "NEUTRAL"
-            return "به نظرم میاد که احساسات ناراحت‌کننده یا شادی نداری. اگر کمک دیگه‌ای میتونستم بهت بکنم خوشحال میشم بهم بگی.", "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num
+            emotion = "NEUTRAL" 
+            return "به نظرم میاد که احساسات ناراحت‌کننده یا شادی نداری. اگر کمک دیگه‌ای میتونستم بهت بکنم خوشحال میشم بهم بگی.", "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num, name, dof
     
     # Check if emtion verified corre
     elif state == "EMOTION_VERIFIER2":
         if yes_no_detection(message) == "YES":
             if check_emotion_positiveness(emotion) == "POS":
-                return random.choice(if_need_any_protocols), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+                if dof == 0:
+                    return random.choice(if_need_any_protocols).replace("Y", name), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
+                elif dof == 1:
+                    return random.choice(if_need_any_protocolsـformal), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
             elif check_emotion_positiveness(emotion) == "NEG":
-                return random.choice(event), "EVENT", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+                if dof == 0:
+                    return random.choice(event), "EVENT", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
+                elif dof == 1:
+                    return random.choice(eventـformal), "EVENT", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
             else:
-                 return "به نظرم میاد که احساسات ناراحت‌کننده یا شادی نداری. اگر کمک دیگه‌ای میتونستم بهت بکنم خوشحال میشم بهم بگی.", "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num
+                 return "به نظرم میاد که احساسات ناراحت‌کننده یا شادی نداری. اگر کمک دیگه‌ای میتونستم بهت بکنم خوشحال میشم بهم بگی.", "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num, name, dof
         elif yes_no_detection(message) == "NO":
-            return random.choice(tell_emotion), "EMOTION_DETECTOR", suggested_protocol_pool, ["خوشحالم", "ناراحتم"], addtionals_lst, addtional_num
+            if dof == 0:
+                return random.choice(tell_emotion), "EMOTION_DETECTOR", suggested_protocol_pool, ["خوشحالم", "ناراحتم"], addtionals_lst, addtional_num, name, dof
+            elif dof == 1:
+                return random.choice(tell_emotionـformal), "EMOTION_DETECTOR", suggested_protocol_pool, ["خوشحالم", "ناراحتم"], addtionals_lst, addtional_num, name, dof
         else:
-            return "لطفا با بله یا خیر بهم بگو.", "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            return "لطفا با بله یا خیر بهم بگو.", "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
 
     # Emtion Detector
     elif state == "EMOTION_DETECTOR":
@@ -646,12 +723,18 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
             emotion = "NEUTRAL"
             
         if check_emotion_positiveness(emotion) == "POS":
-            return random.choice(if_need_any_protocols), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            if dof == 0:
+                return random.choice(if_need_any_protocols).replace("Y", name), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
+            elif dof == 1:
+                return random.choice(if_need_any_protocolsـformal), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
         elif check_emotion_positiveness(emotion) == "NEG":
             suggested_protocol_pool.extend([17, 18, 7, 16, 15])
-            return random.choice(event), "EVENT", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            if dof == 0:
+                return random.choice(event), "EVENT", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
+            elif dof == 1:
+                return random.choice(eventـformal), "EVENT", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
         else:
-            return "فکر می‌کنم مشکلی پیش اومده.", "FEELING", suggested_protocol_pool, ["مشکلی نیست"], addtionals_lst, addtional_num
+            return "فکر می‌کنم مشکلی پیش اومده.", "FEELING", suggested_protocol_pool, ["مشکلی نیست"], addtionals_lst, addtional_num, name, dof
 
     # Ask if user needs any protocols (in case of happiness)?
     elif state == "IF_NEED_ANY_PROTOCOLS":
@@ -659,74 +742,77 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
             suggested_protocol_pool.extend([15, 21, 7, 8, 17, 18, 12, 13, 14, 26, 19, 22, 23])
             random.shuffle(suggested_protocol_pool)
             current_protocol = suggested_protocol_pool.pop(0)
-            return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num
+            return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof
         if yes_no_detection(message) == "NO":
-            return "ممنون که باهام صحبت کردی :)", "END", suggested_protocol_pool, ["خدانگهدار", "روز بخیر"], addtionals_lst, addtional_num
+            return "ممنون که باهام صحبت کردی :)", "END", suggested_protocol_pool, ["خدانگهدار", "روز بخیر"], addtionals_lst, addtional_num, name, dof
 
     # Event
     elif state == "EVENT":
         if yes_no_detection(message) == "YES":
-            return random.choice(time), "EVENT_TIME", suggested_protocol_pool, ["خیلی وقت پیش بوده", "اخیرا اتفاق افتاده"], addtionals_lst, addtional_num
+            if dof == 0:
+                return random.choice(time), "EVENT_TIME", suggested_protocol_pool, ["خیلی وقت پیش بوده", "اخیرا اتفاق افتاده"], addtionals_lst, addtional_num, name, dof
+            elif dof == 1:
+                return random.choice(timeـformal), "EVENT_TIME", suggested_protocol_pool, ["خیلی وقت پیش بوده", "اخیرا اتفاق افتاده"], addtionals_lst, addtional_num, name, dof
         if yes_no_detection(message) == "NO":
             suggested_protocol_pool.extend([9])
-            return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
 
     # Ask if event was recent?
     elif state == "EVENT_TIME":
         if check_event_time(message) == "RECENT":
             suggested_protocol_pool.extend([9])
-            return "میتونم ازت بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            return "میتونم ازت بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
         if check_event_time(message) == "NOT_RECENT":
-            return "آیا تمرین ۱۰ باعث ناراحتی شما می‌شود؟" + protocol_generator(11), "PROTOCOL_10", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            return "آیا تمرین ۱۰ باعث ناراحتی شما می‌شود؟" + protocol_generator(11), "PROTOCOL_10", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
 
     # Ask if protocol 10 is distressing?
     elif state == "PROTOCOL_10":
         if yes_no_detection(message) == "YES":
             suggested_protocol_pool.extend([15])
-            return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
         if yes_no_detection(message) == "NO":
             suggested_protocol_pool.extend([10])
-            return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
 
 
     # Additional Questions
     elif state == "ADDITIONAL":
         if yes_no_detection(message) == "YES":
-            return random.choice(addtionals_lst[addtional_num]["questions"]), "ADDITIONAL_RESPONSE", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num+1
+            return random.choice(addtionals_lst[addtional_num]["questions"]), "ADDITIONAL_RESPONSE", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num+1, name, dof
         if yes_no_detection(message) == "NO":
             if len(suggested_protocol_pool) > 0:
                 random.shuffle(suggested_protocol_pool)
                 current_protocol = suggested_protocol_pool.pop(0)
-                return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num
+                return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof
             else:
-                return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+                return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
 
     # Additional Questions
     elif state == "ADDITIONAL_RESPONSE":
         if yes_no_detection(message) == "YES":
             suggested_protocol_pool.extend(addtionals_lst[addtional_num-1]["YES"])
             if addtional_num < 7:
-                return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+                return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
             else:
                 if len(suggested_protocol_pool) > 0:
                     random.shuffle(suggested_protocol_pool)
                     current_protocol = suggested_protocol_pool.pop(0)
-                    return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num
+                    return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof
                 else:
-                    return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+                    return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
 
 
         if yes_no_detection(message) == "NO":
             suggested_protocol_pool.extend(addtionals_lst[addtional_num-1]["NO"])
             if addtional_num < 7:
-                return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+                return "میتونم بازم سوال بپرسم؟", "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
             else:
                 if len(suggested_protocol_pool) > 0:
                     random.shuffle(suggested_protocol_pool)
                     current_protocol = suggested_protocol_pool.pop(0)
-                    return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num
+                    return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof
                 else:
-                    return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+                    return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
 
 
     # Protocol Suggesting
@@ -734,43 +820,43 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         if len(suggested_protocol_pool) > 0:
             random.shuffle(suggested_protocol_pool) 
             current_protocol = suggested_protocol_pool.pop(0)
-            return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num
+            return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof
         else:
-            return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+            return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
 
     elif state == "PROTOCOL_SUGGESTING2":
         if yes_no_detection(message) == "YES":
-            return "لطفا انجامش بده و بعد بهم بگو که حالت بهتره؟", "PROTOCOL_SUGGESTING3", suggested_protocol_pool, ["هنوز خوب نیستم", "بهترم"], addtionals_lst, addtional_num
+            return "لطفا انجامش بده و بعد بهم بگو که حالت بهتره؟", "PROTOCOL_SUGGESTING3", suggested_protocol_pool, ["هنوز خوب نیستم", "بهترم"], addtionals_lst, addtional_num, name, dof
         if yes_no_detection(message) == "NO":
             if len(suggested_protocol_pool) > 0:
-                return "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟", "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+                return "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟", "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
             else:
-                return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+                return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
 
     elif state == "PROTOCOL_SUGGESTING_AGAIN":
         if yes_no_detection(message) == "YES":
             if len(suggested_protocol_pool) > 0: 
                 random.shuffle(suggested_protocol_pool)
                 current_protocol = suggested_protocol_pool.pop(0)
-                return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num
+                return {"response": "لطفا تمرین زیر رو انجام بده.", "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof
             else:
-                return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+                return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
         if yes_no_detection(message) == "NO":
-            return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+            return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
         
     # Protocol Suggesting
     elif state == "PROTOCOL_SUGGESTING3":
         if len(suggested_protocol_pool) > 0:
-            return "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟", "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num
+            return "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟", "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof
         else:
-            return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+            return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
 
     # Thank user
     elif state == "END":
-        return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+        return "ممنون که باهام صحبت کردی :)", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
 
     # End of Conversation
     elif state == "END2":
-        return "امیدوارم تونسته باشم کمکت کنم.", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num
+        return "امیدوارم تونسته باشم کمکت کنم.", "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof
     return
 
