@@ -734,12 +734,8 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
     if state == "GREETING": 
         print(len(protocol_titles), len(protocols))
         b = shuffle_lst(additionals)
-        if dof == 0:
-            previous_questions_embeddings, future_question = random_generator(greeting, previous_questions_embeddings, model)
-            return future_question, "FORMALITY", suggested_protocol_pool, ["سلام", "درود"], additionals, b, name, dof, previous_questions_embeddings
-        elif dof == 1:
-            previous_questions_embeddings, future_question = random_generator(greetingـformal, previous_questions_embeddings, model)
-            return future_question, "FORMALITY", suggested_protocol_pool, ["سلام", "درود"], additionals, b, name, dof, previous_questions_embeddings
+        previous_questions_embeddings, future_question = random_generator(greeting, previous_questions_embeddings, model)
+        return future_question, "FORMALITY", suggested_protocol_pool, ["سلام", "درود"], additionals, b, name, dof, previous_questions_embeddings
 
     ## Degree of Formality 
     if state == "FORMALITY": 
