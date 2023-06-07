@@ -121,17 +121,17 @@ greeting = [
 ]
 
 feeling = [
-   "Y عزیز حالت چطوره؟",
-    "Y عزیز خوبی؟",
+   "YU عزیز حالت چطوره؟",
+    "YU عزیز خوبی؟",
     "خوبی Y؟"
     "Y چطوری؟",
-    "Y عزیز امروز حالت خوبه؟",
+    "YU عزیز امروز حالت خوبه؟",
     "Y امروز حالت چطوره؟",
-    "Y عزیز حالت خوبه؟",
+    "YU عزیز حالت خوبه؟",
     "Y امروز چطوری؟",
-    "Y عزیز احوالت چطوره؟",
+    "YU عزیز احوالت چطوره؟",
     "Y امروز خوشحالی یا ناراحت؟",
-    "Y عزیز حالت چطوره دوست من؟"
+    "YU عزیز حالت چطوره دوست من؟"
 ]
 
 emotion_verifier = [
@@ -151,14 +151,14 @@ tell_emotion = [
 
 if_need_any_protocols = [
     "Y آیا نیاز به تمرینی برای بهبود حالت داری؟",
-    "Y عزیز آیا به تمرینی برای بهتر شدن حالت احتیاج داری؟",
+    "YU عزیز آیا به تمرینی برای بهتر شدن حالت احتیاج داری؟",
     "Y آیا حس می‌کنی احتیاج به تمرینی داشته باشی؟",
-    "Y عزیز آیا دوست داری تمرینی برای بهبود حالت انجام بدی؟",
-    "Y عزیز آیا نیاز داری تمرینی به تو معرفی کنم؟",
+    "YU عزیز آیا دوست داری تمرینی برای بهبود حالت انجام بدی؟",
+    "YU عزیز آیا نیاز داری تمرینی به تو معرفی کنم؟",
     "Y آیا دوست داری تمرینی انجام بدی",
-    "Y عزیز حس میکنی به تمرینی برای بهبود حالت نیاز داری؟",
+    "YU عزیز حس میکنی به تمرینی برای بهبود حالت نیاز داری؟",
     "Y حس میکنی با انجام تمرینی حالت بهتر میشه؟",
-    "Y عزیز حس میکنی برای بهبود حالت تمرینی نیاز داری؟"
+    "YU عزیز حس میکنی برای بهبود حالت تمرینی نیاز داری؟"
 ]
 
 
@@ -673,6 +673,10 @@ def dof_checker(message):
         if f in message:
             return 1
 
+def ye_name_detector(name):
+    if name.endswith("ا") or name.endswith("و") or name.endswith("ه"):
+        return "ی"
+    return ""
 
 emotion = ""
 
@@ -751,7 +755,7 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         elif dof == 1:
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, feeling)
-                return future_question.replace("Y", name), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                return future_question.replace("Y", name).replace("U", ye_name_detector(name)), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
             elif dof == 1:
                 previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, feelingـformal)
                 return future_question, "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
@@ -763,7 +767,7 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         print(name)
         if dof == 0:
             previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, feeling)
-            return future_question.replace("Y", name), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            return future_question.replace("Y", name).replace("U", ye_name_detector(name)), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         elif dof == 1:
             previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, feelingـformal)
             return future_question, "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
@@ -797,7 +801,7 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
             if check_emotion_positiveness(emotion) == "POS":
                 if dof == 0:
                     previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, if_need_any_protocols)
-                    return future_question.replace("Y", name), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                    return future_question.replace("Y", name).replace("U", ye_name_detector(name)), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
                 elif dof == 1:
                     previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, if_need_any_protocolsـformal)
                     return future_question, "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
@@ -834,7 +838,7 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         if check_emotion_positiveness(emotion) == "POS":
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, if_need_any_protocols)
-                return future_question.replace("Y", name), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                return future_question.replace("Y", name).replace("U", ye_name_detector(name)), "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
             elif dof == 1:
                 previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, if_need_any_protocolsـformal)
                 return future_question, "IF_NEED_ANY_PROTOCOLS", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
