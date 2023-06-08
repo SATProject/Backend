@@ -114,8 +114,6 @@ name_lst = [
     "میشه اسمت رو بهم بگی؟",
     "چی صدات کنم؟",
     "میشه بدونم اسمت چیه؟",
-    "نامت چیه؟",
-    " چطور صدا کنمت؟",
 ]
 
 
@@ -135,10 +133,10 @@ greeting = [
     " .سلام. به من اجازه بده بهت کمک کنم تا حالت بهتر شود",
     "سلام، من می‌خواهم بهت کمک کنم",
     " سلام، خوشحالم که باهم صحبت می‌کنیم.",
-    "سلام، وقت شما خوش،",
+    "سلام، وقت شما خوش",
     " سلام، خوشحالم که با من صحبت می‌کنی",
-    "سلام، دوست عزیزم",
-    "سلام، دوست خوبم",
+    "سلام دوست عزیزم",
+    "سلام دوست خوبم",
 
 ]
 
@@ -335,38 +333,86 @@ additionals =  [
 # Sara's Project
 error = [
     "فکر میکنم مشکلی پیش اومده. دوباره تلاش کن.",
+    "به نظرم مشکلی رخ داده؛ لطفاً دوباره تلاش کن.",
+    "فکر می‌کنم مشکلی به وجود اومده؛ لطفاً مجدداً سعی کن.",
+    "به نظر میرسه یه مشکلی پیش اومده؛ لطفاً دوباره تلاش کن.",
+    "فکر می‌کنم مشکلی رخ داده؛ لطفاً دوباره سعی کن.",
+    "به نظر میرسه مشکلی رخ داده؛ لطفاً مجدداً تلاش کن.",
+    "به نظر میرسه که مشکلی رخ داده. پیشنهاد می‌کنم دوباره تلاش کن.",
+    "به نظر میرسه که مشکلی هست. توصیه می‌کنم دوباره سعی کنی.",
+    "احتمالاً مشکلی هست. بهتره دوباره تلاش کنی.",
+    "به نظر میرسه که مشکلی پیش اومده. پیشنهاد می‌کنم مجدداً تلاش کنی."
 ]
 
 neutral_verifier = [
-    "به نظرم میاد که احساسات ناراحت‌کننده یا شادی نداری. اگر کمک دیگه‌ای میتونستم بهت بکنم خوشحال میشم بهم بگی."
+    "به نظر میاد که احساسات ناراحت‌کننده یا شادی نداری. اگر کمک دیگه‌ای میتونستم بهت بکنم خوشحال میشم بهم بگی.",
+    "فکر میکنم حس خاصی نداری. اگر بازم میتونستم کمکت کنم بهم بگو.",
+    "به نظر میاد که حس خاصی نداری. اگر خواستی بازم میتونیم با هم صحبت کنیم.",
+    "فکر میکنم در حال حاضر حس مثبت و منفی نداری. خوشحال میشم اگر نیاز داشتی بازم باهم صحبت کنیم.",
+    "به نظرم میاد که احساس خاصی نداری. اگر بازم میتونستم کمکت کنم بهم بگو.",
+    "به نظر میرسه که در حال حاضر احساسات ناراحت‌کننده یا شادی نداری. اگر نیاز به کمک دیگری داری، خوشحال میشم اگر بهم بگی.",
+    "فکر می‌کنم احساس خاصی نداری. در صورتی که هنوز نیاز به کمک داری حتما بهم بگو.",
+    "به نظر میرسه که حس خاصی نداری. در صورتی که تمایل داری، میتونیم همچنان با هم صحبت کنیم.",
+    "فکر می‌کنم در حال حاضر حس مثبت و منفی نداشته باشی. اگر نیاز داشتی خوشحال می‌شوم که همچنان با هم صحبت کنیم.",
+    "به نظر میرسه که احساس خاصی نداری. اگر هنوز نیاز به کمک داری لطفاً به من بگو."
 ]
 
 yes_no = [
-    "لطفا با بله یا خیر بهم بگو."
+    "لطفا با بله یا خیر بهم بگو.",
 ]
 
 thanks = [
-    "ممنون که باهام صحبت کردی :)"
+    "ممنون که باهام صحبت کردی :)",
+    "از صحبت باهات خوشحال شدم",
+    "بابت مکالمه‌ای که داشتیم متشکرم",
+    "از اینکه حست رو بهم گفتی ممنونم.",
+    "خوشحال شدم صحبت کردیم.",
+    "ممنونم که این مکالمه را با من داشتید.",
+    "از شما بابت ابراز حس‌هایتان متشکرم.",
+    "با صحبت کردن با شما خوشحال شدم."
 ]
 
 additional_question = [
-    "میتونم بازم سوال بپرسم؟"
+    "میتونم بازم سوال بپرسم؟",
+    "اجازه میدی بازم سوال بپرسم؟",
+    "میشه بازم سوال بپرسم؟",
+    "بازم میتونم سوال بپرسم؟",
+    "بازم چیزی بپرسم؟"
 ]
 
 exercise10_distressing = [
-    "آیا تمرین ۱۰ باعث ناراحتی شما می‌شود؟"
+    "آیا تمرین زیر باعث ناراحتیت میشه؟",
+    "آیا تمرین زیر ناراحتت میکنه؟ ",
+    "تمرین زیر باعث میشه ناراحت شی؟",
+    "آیا تمرین زیر حالت رو بهتر نمیکنه؟"
 ]
 
 exercise_doing = [
-    "لطفا تمرین زیر رو انجام بده."
+    "لطفا تمرین زیر رو انجام بده.",
+    "تمرین زیر رو سعی کن انجام بدی.",
+    "تمرینی که بهت میگم رو لطفا انجام بده.",
+    "لطفا تمرین زیر رو سعی کن انجام بدی.",
+    "تمرین زیر رو لطفا انجامش بده."
 ]
 
 exercise_feeling = [
-    "لطفا انجامش بده و بعد بهم بگو که حالت بهتره؟"
+    "لطفا انجامش بده و بعد بهم بگو که حالت بهتره؟",
+    "لطفا بعد از انجام تمرین بگو حالت بهتر شد؟",
+    "حالت بعد از انجام تمرین بهتر شد؟",
+    "بعد انجام تمرین احساس بهتری می‌کنی؟",
+    "بعد از انجام تمرین بگو حالت بهتر شد؟",
+    "بعد از اینکه تمرین رو انجام دادی احساس بهتری داشتی؟",
+    "حس می‌کنی بعد از انجام تمرین بهتر شدی؟"
 ]
 
 more_exercises = [
-    "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟"
+    "آیا تمرین دیگه‌ای میخوای بهت پیشنهاد بدم؟",
+    "بازم میخوای تمرین دیگه‌ای پیشنهاد بدم؟",
+    "بازم نیاز داری تمرینی پیشنهاد بدم؟",
+    "میخوای بازم تمرین دیگه‌ای پیشنهاد بدم؟",
+    "بازم نیاز داری تمرین دیگه‌ای پیشنهاد بدم؟",
+    "میخوای بازم تمرین بهت پیشنهاد بدم؟",
+    "تمرین دیگه‌ای هم میخوای؟"
 ]
 
 
@@ -568,7 +614,7 @@ if_need_any_protocolsـformal = [
 
 eventـformal = [
     "متاسفم که می شنوم حالتان خوب نیست. آیا اتفاق خاصی افتاده است که این احساس را در شما ایجاد کند؟",
-    "آیا اتفاق خاصی افتاده است که غمگینتان کرده است؟ لطفا با من راحت باشید..",
+    "آیا اتفاق خاصی افتاده است که غمگینتان کرده است؟ لطفا با من راحت باشید.",
     "اتفاق خاصی افتاده است که شما را غمگین کند؟ سعی کنید با من راحت باشید.",
     "اتفاق خاصی افتاده است که ناراحتتان کند؟",
     "چیز خاصی شده است که باعث شده است ناراحت باشید؟",
@@ -597,18 +643,92 @@ timeـformal = [
     "آیا این اتفاق به تازگی رخ داده است؟",
 ]
 
+# Sara's Project
+error_formal = [
+    "فکر میکنم مشکلی پیش آمده است. دوباره تلاش کنید.",
+    "به نظرم یک مشکل رخ داده است؛ لطفاً دوباره تلاش کنید.",
+    "فکر می‌کنم مشکلی به وجود آمده است؛ لطفاً مجدداً سعی کنید.",
+    "به نظر می‌رسد یک مشکل پیش آمده است؛ لطفاً دوباره تلاش کنید.",
+    "فکر می‌کنم مشکلی رخ داده است؛ لطفاً دوباره سعی کنید.",
+    "به نظر می‌رسد یک مشکلی رخ داده است؛ لطفاً مجدداً تلاش کنید.",
+    "به نظر می‌رسد که مواجهه‌ای رخ داده است. پیشنهاد می‌کنم دوباره تلاش کنید.",
+    "به نظر می‌رسد که با یک مشکل مواجه شده‌اید. توصیه می‌کنم دوباره سعی کنید.",
+    "احتمالاً با یک مشکل مواجه شده‌اید. بهتر است دوباره تلاش کنید.",
+    "به نظر می‌رسد که مشکلی پیش آمده است. پیشنهاد می‌کنم مجدداً تلاش کنید."
+]
+
+neutral_verifier_formal = [
+    "به نظر می‌آید که احساسات ناراحت‌کننده یا شادی ندارید. اگر کمک دیگری میتوانستم بهتان بکنم خوشحال میشوم به من بگویید..",
+    "فکر میکنم حس خاصی ندارید. اگر باز هم میتوانستم کمکتان کنم به من بکویید.",
+    "به نظر می‌آید که حس خاصی ندارید. اگر خواستید باز هم میتوانیم با هم صحبت کنیم.",
+    "فکر میکنم در حال حاضر حس مثبت و منفی نداشته باشید. خوشحال میشوم اگر نیاز داشتید باز هم باهم صحبت کنیم.",
+    "به نظر می‌آید که احساس خاصی ندارید. اگر باز هم میتوانستم کمکتان کنم به من بگویید.",
+    "به نظر می‌رسد که در حال حاضر احساسات ناراحت‌کننده یا شادی ندارید. اگر نیاز به کمک دیگری دارید، خوشحال می‌شوم اگر به من بگویید.",
+    "فکر می‌کنم احساس خاصی ندارید. در صورتی که هنوز نیاز به کمک دارید، لطفاً به من اطلاع دهید.",
+    "به نظر می‌رسد که حس خاصی ندارید. در صورت تمایل، می‌توانیم همچنان با هم صحبت کنیم.",
+    "فکر می‌کنم در حال حاضر حس مثبت و منفی ندارید. اگر نیاز داشتید، خوشحال می‌شوم اگر همچنان با هم صحبت کنیم.",
+    "به نظر می‌رسد که احساس خاصی ندارید. اگر هنوز نیاز به کمک دارید، لطفاً به من بگویید."
+]
+
+yes_no_formal = [
+    "لطفا با بله یا خیر به من بگویید.",
+]
+
+thanks_formal = [
+    "متشکرم که با من صحبت کردید.",
+    "از صحبت با شما خوشحال شدم",
+    "بابت مکالمه‌ای که داشتیم متشکرم",
+    "از اینکه حستان رو به من گفتید سپاسگزارم.",
+    "خوشحال شدم صحبت کردیم.",
+    "ممنونم که این مکالمه را با من داشتید.",
+    "از شما بابت ابراز حس‌هایتان متشکرم.",
+    "با صحبت کردن با شما خوشحال شدم."
+]
+
+additional_question_formal = [
+    "آیا می‌توانم باز هم سوال بپرسم؟",
+    "آیا اجازه میدهید باز هم سوال بپرسم؟",
+    "امکانش هست باز هم سوال بپرسم؟",
+    "باز هم میتوانم سوال بپرسم؟",
+    "آیا اجازه می‌دهید سوالات بیشتری بپرسم؟"
+]
+
+exercise10_distressing_formal = [
+    "آیا تمرین زیر باعث ناراحتی شما می‌شود؟",
+    "آیا تمرین زیر ناراحتتان میکند؟ ",
+    "آیا تمرین زیر باعث می‌شود ناراحت شوید؟",
+    "آیا تمرین زیر حالتان را بهتر نمی‌کند؟"
+]
+
+exercise_doing_formal = [
+    "لطفا تمرین زیر را انجام دهید.",
+    "تمرین زیر را سعی کنید انجام دهید.",
+    "تمرینی که در ادامه می‌گویم را لطفا انجام دهید.",
+    "لطفا تمرین زیر را سعی کنید انجام دهید.",
+    "تمرین زیر را لطفا انجام دهید."
+]
+
+exercise_feeling_formal = [
+    "لطفا تمرین را انجام دهید و سپس به من بگویید که حالتان بهتر شده است؟",
+    "لطفا بعد از انجام تمرین به من بگویید که حالتان بهتر شده است؟",
+    "حالتان بعد از انجام تمرین بهتر شد؟",
+    "آیا پس از انجام تمرین احساس بهتری می‌کنید؟",
+    "بعد از انجام تمرین به من بگویید که حالتان بهتر شد؟",
+    "آیا پس از اینکه تمرین را انجام دادید احساس بهتری داشتید؟",
+    "آیا حس میکنید که پس از انجام تمرین بهتر شدید؟"
+]
+
+more_exercises_formal = [
+    "آیا تمرین دیگری میخواهید که به شما پیشنهاد دهم؟",
+    "آیا باز هم میخواهید تمرین دیگری به شما پیشنهاد دهم؟",
+    "باز هم نیاز دارید تمرینی به شما پیشنهاد دهم؟",
+    "آیا می‌خواهید باز هم تمرین دیگری به شما پیشنهاد دهم؟",
+    "باز هم نیاز دارید تمرین دیگری به شما پیشنهاد دهم؟",
+    "آیا می‌خواهید باز هم تمرینی به شما پیشنهاد بدم؟",
+    "آیا تمرین دیگری هم می‌خواهید؟"
+]
+
 additionalsـformal =  [
-    {
-    "questions": [ 
-        "آیا اخیرا یکی از احساسات حسادت یا حرص را داشتید؟",
-        "آیا تازگیا یکی از احساسات حسادت یا حرص را داشتید؟",
-        "آیا اخیرا احساس حسادت یا حرص کرده اید؟",
-        "آیا تازگیا احساس حسادت یا حرص کرده اید؟",
-        "آیا اخیرا حس حسادت یا حرص داشتید؟",
-        "آیا تازگیا حس حسادت یا حرص داشتید؟"
-        ], 
-        "YES":[15, 17, 18], "NO":[15]
-    },
     {
     "questions": [ 
         "آیا حس می‌کنید که باید ناجی فرد دیگری باشید؟",
@@ -666,10 +786,10 @@ additionalsـformal =  [
         "آیا همیشه وقتی چیزی بد پیش میرود خودتان را سرزنش می‌کنید؟",
         "آیا همیشه وقتی چیزی بد پیش میرود خودتان را متهم می‌کنید؟",
         "آیا همیشه وقتی چیزی بد پیش میرود خودتان را مقصر می‌دانید؟",
-        "آیا همیشه وقتی که موقعیتی نامطلوب رخ می‌دهد، خودت را سرزنش می‌کنید؟",
-        "آیا همیشه وقتی که موقعیتی نامطلوب رخ می‌دهد، خودت را متهم می‌کنید؟",
-        " آیا همیشه وقتی که موقعیتی نامطلوب رخ می‌دهد، خودت را مقصر می‌دانید؟",
-        " آیا همیشه وقتی که موقعیتی بد رخ می‌دهد، خودت را متهم می‌دانید؟"
+        "آیا همیشه وقتی که موقعیتی نامطلوب رخ می‌دهد، خودتان را سرزنش می‌کنید؟",
+        "آیا همیشه وقتی که موقعیتی نامطلوب رخ می‌دهد، خودتان را متهم می‌کنید؟",
+        " آیا همیشه وقتی که موقعیتی نامطلوب رخ می‌دهد، خودتان را مقصر می‌دانید؟",
+        " آیا همیشه وقتی که موقعیتی بد رخ می‌دهد، خودتان را متهم می‌دانید؟"
         ], 
         "YES":[11, 20, 24], "NO":[15]
     },
@@ -855,28 +975,28 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
     ## Greeting 
     if state == "GREETING": 
         print(len(protocol_titles), len(protocols))
-        b = shuffle_lst(additionals)
         previous_questions_embeddings, future_question = random_generator(greeting, previous_questions_embeddings, model)
-        return future_question, "FORMALITY", suggested_protocol_pool, ["سلام", "درود"], additionals, b, name, dof, previous_questions_embeddings
+        return future_question, "FORMALITY", suggested_protocol_pool, ["سلام", "درود"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
     ## Degree of Formality 
     if state == "FORMALITY": 
         previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, formality)
-        return future_question, "NAME", suggested_protocol_pool, ["رسمی", "دوستانه"], additionals, addtional_num, name, dof, previous_questions_embeddings
+        return future_question, "NAME", suggested_protocol_pool, ["رسمی", "دوستانه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
     ## Name
     if state == "NAME": 
         dof = dof_checker(message)
+        b = []
+        if dof == 0:
+            b = shuffle_lst(additionals)
+        else:
+            b = shuffle_lst(additionalsـformal)
         if dof == 0: 
             previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, name_lst)
             return future_question, "FEELING", suggested_protocol_pool, [], additionals, addtional_num, name, dof, previous_questions_embeddings
         elif dof == 1:
-            if dof == 0:
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, feeling)
-                return future_question.replace("Y", name).replace("U", ye_name_detector(name)), "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, feelingـformal)
-                return future_question, "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, feelingـformal)
+            return future_question, "EMOTION_VERIFIER", suggested_protocol_pool, ["خوبم", "ناراحتم"], additionalsـformal, addtional_num, name, dof, previous_questions_embeddings 
 
 
     # Feeling 
@@ -910,8 +1030,12 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
                 return future_question.replace("X", "ناراحتی").replace("Z", "ناراحت"), "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         elif sentiment_analysis(message) == "NEUTRAL":
             emotion = "NEUTRAL" 
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, neutral_verifier)
-            return future_question, "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, neutral_verifier)
+                return future_question, "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, neutral_verifier_formal)
+                return future_question, "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
     
     # Check if emtion verified corre
     elif state == "EMOTION_VERIFIER2":
@@ -931,8 +1055,12 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
                     previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, eventـformal)
                     return future_question, "EVENT", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
             else:
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, neutral_verifier)
-                return future_question, "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, neutral_verifier)
+                    return future_question, "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, neutral_verifier_formal)
+                    return future_question, "END", suggested_protocol_pool, ["ممنون", "متشکرم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         elif yes_no_detection(message) == "NO":
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, tell_emotion)
@@ -941,8 +1069,12 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
                 previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, tell_emotionـformal)
                 return future_question, "EMOTION_DETECTOR", suggested_protocol_pool, ["خوشحالم", "ناراحتم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         else:
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, yes_no)
-            return future_question, "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, yes_no)
+                return future_question, "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, yes_no_formal)
+                return future_question, "EMOTION_VERIFIER2", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
     # Emotion Detector
     elif state == "EMOTION_DETECTOR":
@@ -969,8 +1101,12 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
                 previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, eventـformal)
                 return future_question, "EVENT", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         else:
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, error)
-            return future_question, "FEELING", suggested_protocol_pool, ["مشکلی نیست"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, error)
+                return future_question, "FEELING", suggested_protocol_pool, ["مشکلی نیست"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, error_formal)
+                return future_question, "FEELING", suggested_protocol_pool, ["مشکلی نیست"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
     # Ask if user needs any protocols (in case of happiness)?
     elif state == "IF_NEED_ANY_PROTOCOLS":
@@ -978,11 +1114,19 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
             suggested_protocol_pool.extend([15, 21, 7, 8, 17, 18, 12, 13, 14, 26, 19, 22, 23])
             random.shuffle(suggested_protocol_pool)
             current_protocol = suggested_protocol_pool.pop(0)
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
-            return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
+                return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing_formal)
+                return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         if yes_no_detection(message) == "NO":
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
-            return future_question, "END", suggested_protocol_pool, ["خدانگهدار", "روز بخیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
+                return future_question, "END", suggested_protocol_pool, ["خدانگهدار", "روز بخیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+                return future_question, "END", suggested_protocol_pool, ["خدانگهدار", "روز بخیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
 
     # Event
@@ -996,31 +1140,51 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
                 return future_question, "EVENT_TIME", suggested_protocol_pool, ["خیلی وقت پیش بوده", "اخیرا اتفاق افتاده"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         if yes_no_detection(message) == "NO":
             suggested_protocol_pool.extend([9])
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
-            return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
+                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question_formal)
+                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
 
     # Ask if event was recent?
     elif state == "EVENT_TIME":
         if check_event_time(message) == "RECENT":
             suggested_protocol_pool.extend([9])
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
-            return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
+                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question_formal)
+                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         if check_event_time(message) == "NOT_RECENT":
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise10_distressing)
-            return future_question + "\n" + protocol_generator(11), "PROTOCOL_10", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise10_distressing)
+                return future_question + "\n" + protocol_generator(11), "PROTOCOL_10", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise10_distressing_formal)
+                return future_question + "\n" + protocol_generator(11), "PROTOCOL_10", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
 
     # Ask if protocol 10 is distressing?
     elif state == "PROTOCOL_10":
         if yes_no_detection(message) == "YES":
             suggested_protocol_pool.extend([15])
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
-            return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
+                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question_formal)
+                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         if yes_no_detection(message) == "NO":
             suggested_protocol_pool.extend([10])
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
-            return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
+                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question_formal)
+                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
 
     # Additional Questions
@@ -1031,44 +1195,76 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
             if len(suggested_protocol_pool) > 0:
                 random.shuffle(suggested_protocol_pool)
                 current_protocol = suggested_protocol_pool.pop(0)
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
-                return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
+                    return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing_formal)
+                    return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
             else:
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
-                return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
+                    return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+                    return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
     # Additional Questions
     elif state == "ADDITIONAL_RESPONSE":
         if yes_no_detection(message) == "YES":
             suggested_protocol_pool.extend(addtionals_lst[addtional_num-1]["YES"])
             if addtional_num < 7:
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
-                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
+                    return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question_formal)
+                    return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
             else:
                 if len(suggested_protocol_pool) > 0:
                     random.shuffle(suggested_protocol_pool)
                     current_protocol = suggested_protocol_pool.pop(0)
-                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
-                    return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                    if dof == 0:
+                        previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
+                        return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                    elif dof == 1:
+                        previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing_formal)
+                        return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
                 else:
-                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
-                    return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                    if dof == 0:
+                        previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
+                        return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                    elif dof == 1:
+                        previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+                        return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
 
         if yes_no_detection(message) == "NO":
             suggested_protocol_pool.extend(addtionals_lst[addtional_num-1]["NO"])
             if addtional_num < 7:
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
-                return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question)
+                    return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, additional_question_formal)
+                    return future_question, "ADDITIONAL", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
             else:
                 if len(suggested_protocol_pool) > 0:
                     random.shuffle(suggested_protocol_pool)
                     current_protocol = suggested_protocol_pool.pop(0)
-                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
-                    return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                    if dof == 0:
+                        previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
+                        return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                    elif dof == 1:
+                        previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing_formal)
+                        return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
                 else:
-                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
-                    return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                    if dof == 0:
+                        previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
+                        return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                    elif dof == 1:
+                        previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+                        return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
 
     # Protocol Suggesting
@@ -1076,23 +1272,43 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
         if len(suggested_protocol_pool) > 0:
             random.shuffle(suggested_protocol_pool) 
             current_protocol = suggested_protocol_pool.pop(0)
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
-            return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
+                return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing_formal)
+                return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         else:
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
-            return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
+                return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+                return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
     elif state == "PROTOCOL_SUGGESTING2":
         if yes_no_detection(message) == "YES":
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_feeling)
-            return future_question, "PROTOCOL_SUGGESTING3", suggested_protocol_pool, ["هنوز خوب نیستم", "بهترم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_feeling)
+                return future_question, "PROTOCOL_SUGGESTING3", suggested_protocol_pool, ["هنوز خوب نیستم", "بهترم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_feeling_formal)
+                return future_question, "PROTOCOL_SUGGESTING3", suggested_protocol_pool, ["هنوز خوب نیستم", "بهترم"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         if yes_no_detection(message) == "NO":
             if len(suggested_protocol_pool) > 0:
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, more_exercises)
-                return future_question, "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, more_exercises)
+                    return future_question, "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, more_exercises_formal)
+                    return future_question, "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
             else:
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
-                return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
+                    return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+                    return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
 
     elif state == "PROTOCOL_SUGGESTING_AGAIN":
@@ -1100,28 +1316,52 @@ def information_retrieval_module(state, message, suggested_protocol_pool, addtio
             if len(suggested_protocol_pool) > 0: 
                 random.shuffle(suggested_protocol_pool)
                 current_protocol = suggested_protocol_pool.pop(0)
-                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
-                return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing)
+                    return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, exercise_doing_formal)
+                    return {"response": future_question, "title": protocol_titles[current_protocol] , "details": protocols[current_protocol]}, "PROTOCOL_SUGGESTING2", suggested_protocol_pool, ["نمیتونم انجامش بدم", "باشه"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
             else:
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
+                    return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+                elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+                    return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+        if yes_no_detection(message) == "NO":
+            if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
                 return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
-        if yes_no_detection(message) == "NO":
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
-            return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+                return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         
     # Protocol Suggesting
     elif state == "PROTOCOL_SUGGESTING3":
         if len(suggested_protocol_pool) > 0:
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, more_exercises)
-            return future_question, "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, more_exercises)
+                return future_question, "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, more_exercises_formal)
+                return future_question, "PROTOCOL_SUGGESTING_AGAIN", suggested_protocol_pool, ["بله", "خیر"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
         else:
-            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
-            return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            if dof == 0:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
+                return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+            elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+                return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
     # Thank user
     elif state == "END":
-        previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
-        return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+        if dof == 0:
+            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks)
+            return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
+        elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(model, previous_questions_embeddings, thanks_formal)
+            return future_question, "END2", suggested_protocol_pool, ["متشکرم", "ممنون"], addtionals_lst, addtional_num, name, dof, previous_questions_embeddings
 
     # End of Conversation
     elif state == "END2":
