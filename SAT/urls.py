@@ -18,8 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 import api.views as API
+import teacher.views as Teacher
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', API.Chat.as_view())
+    path('api/', API.Chat.as_view()),
+    path('teacher/', Teacher.SATTeacher.as_view())
 ]

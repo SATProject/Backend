@@ -7,8 +7,14 @@ from rest_framework.response import Response
 from rest_framework import status
 import json
 from sentence_transformers import SentenceTransformer
-
+import joblib
+from core import speech2text
+from core import text2speech
 from core import main
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+from urllib.parse import unquote
+
 
 class Chat(APIView):
     state = "GREETING"
@@ -20,12 +26,25 @@ class Chat(APIView):
     name = ""
     dof = 0
     previous_questions_embeddings = []
-    model = SentenceTransformer('HooshvareLab/bert-base-parsbert-uncased')
+    model = SentenceTransformer("HooshvareLab/bert-base-parsbert-uncased")
     protocol = ""
     last_state = "GREETING"
-  
+
     def post(self, request):
-        message = json.loads(request.body.decode('utf-8'))["message"]
+        decoded_text = unquote(request.body)
+        print("boddyyyyyy", decoded_text)
+        # message = request.body.decode('utf-8')[8:] #json.loads(request.body.decode('utf-8'))["message"]
+        message = decoded_text[8:].replace("+", " ")
+        # print(message.decode("utf-8"))
+        print("text", message)
+        try:
+            file_obj = request.FILES["voice"]
+            path = default_storage.save("stt/voice.wav", ContentFile(file_obj.read()))
+            message = speech2text.speech2text("stt/voice.wav")
+            print("voice", message)
+        except:
+            print("file not found!")
+
         if message == "restart":
             Chat.state = "GREETING"
 
@@ -33,17 +52,50 @@ class Chat(APIView):
         Chat.last_state = Chat.state
         ###
 
-        res, Chat.state, Chat.suggested_protocol_pool, Chat.buttons, Chat.additionals, Chat.addtional_num, Chat.name, Chat.dof, Chat.previous_questions_embeddings = main.information_retrieval_module(Chat.state, message, Chat.suggested_protocol_pool, Chat.additionals, Chat.addtional_num, Chat.name, Chat.dof, Chat.previous_questions_embeddings, Chat.model)
-        
+        (
+            res,
+            Chat.state,
+            Chat.suggested_protocol_pool,
+            Chat.buttons,
+            Chat.additionals,
+            Chat.addtional_num,
+            Chat.name,
+            Chat.dof,
+            Chat.previous_questions_embeddings,
+        ) = main.information_retrieval_module(
+            Chat.state,
+            message,
+            Chat.suggested_protocol_pool,
+            Chat.additionals,
+            Chat.addtional_num,
+            Chat.name,
+            Chat.dof,
+            Chat.previous_questions_embeddings,
+            Chat.model,
+        )
+
         ## DAILY DIARY
-        if res == "لطفا تمرین زیر رو انجام بده.":
-            Chat.protocol = res.title
-        if Chat.last_state == "PROTOCOL_SUGGESTING3":
-            with open('../core/daily_diary.txt', 'a') as f:
-                f.write('protocol:', Chat.protocol, 'message:', message)
+        # if res == "لطفا تمرین زیر رو انجام بده.":
+        #     Chat.protocol = res.title
+        # if Chat.last_state == "PROTOCOL_SUGGESTING3":
+        #     with open("../core/daily_diary.txt", "a") as f:
+        #         f.write("protocol:", Chat.protocol, "message:", message)
         ###
 
         if Chat.state != Chat.FINAL_STATE:
-            return Response({"status": "success", "response": res, "buttons": Chat.buttons},
-                            status=status.HTTP_200_OK)
-        return Response({"status": "end", "response":  "امیدوارم تونسته باشم کمکت کنم.", "buttons": Chat.buttons}, status=status.HTTP_200_OK)
+            if res is str:
+                text2speech.text2speech(res)
+                print("speech created!")
+            print(res)
+            return Response(
+                {"status": "success", "response": res, "buttons": Chat.buttons},
+                status=status.HTTP_200_OK,
+            )
+        return Response(
+            {
+                "status": "end",
+                "response": "امیدوارم تونسته باشم کمکت کنم.",
+                "buttons": Chat.buttons,
+            },
+            status=status.HTTP_200_OK,
+        )
