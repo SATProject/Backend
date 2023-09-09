@@ -29,12 +29,20 @@ class Chat(APIView):
     model = SentenceTransformer("HooshvareLab/bert-base-parsbert-uncased")
     protocol = ""
     last_state = "GREETING"
+    users_state = {}
 
     def post(self, request):
         decoded_text = unquote(request.body)
         print("boddyyyyyy", decoded_text)
+
+        if "message" not in decoded_text:
+            username = decoded_text[9:].replace("+", " ")
+            Chat.users_state[username] = "GREETING"
+            return Response({"status": "success"})
+
         # message = request.body.decode('utf-8')[8:] #json.loads(request.body.decode('utf-8'))["message"]
-        message = decoded_text[8:].replace("+", " ")
+        username = decoded_text.split("&")[0][9:].replace("+", " ")
+        message = decoded_text.split("&")[1][8:].replace("+", " ")
         # print(message.decode("utf-8"))
         print("text", message)
         try:
@@ -46,15 +54,15 @@ class Chat(APIView):
             print("file not found!")
 
         if message == "restart":
-            Chat.state = "GREETING"
+            Chat.users_state[username] = "GREETING"
 
-        ## USAGE: DAILY DIARY
-        Chat.last_state = Chat.state
-        ###
+        # ## USAGE: DAILY DIARY
+        # Chat.last_state = Chat.state
+        # ###
 
         (
             res,
-            Chat.state,
+            Chat.users_state[username],
             Chat.suggested_protocol_pool,
             Chat.buttons,
             Chat.additionals,
@@ -63,7 +71,7 @@ class Chat(APIView):
             Chat.dof,
             Chat.previous_questions_embeddings,
         ) = main.information_retrieval_module(
-            Chat.state,
+            Chat.users_state[username],
             message,
             Chat.suggested_protocol_pool,
             Chat.additionals,
@@ -82,7 +90,7 @@ class Chat(APIView):
         #         f.write("protocol:", Chat.protocol, "message:", message)
         ###
 
-        if Chat.state != Chat.FINAL_STATE:
+        if Chat.users_state[username] != Chat.FINAL_STATE:
             if res is str:
                 text2speech.text2speech(res)
                 print("speech created!")

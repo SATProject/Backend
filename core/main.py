@@ -740,6 +740,14 @@ more_exercises_formal = [
     "آیا تمرین دیگری هم می‌خواهید؟",
 ]
 
+not_understanding = [
+    "متوجه نشدم میشه دوباره بگی.",
+    "ببخشید متوجه نشدم چیه منظورت. میتونی دوباره بگی.",
+    "ببخشید متوجه نشدم چی گفتی. میشه دوباره بگی.",
+    "ببخشید که متوجه نشدم چی گفتی. میتونی دوباره بگی.",
+    "ببخشید متوجه منظورت نشدم. میتونی دوباره بگی.",
+]
+
 additionalsـformal = [
     {
         "questions": [
@@ -1085,6 +1093,18 @@ def information_retrieval_module(
                 dof,
                 previous_questions_embeddings,
             )
+        else:
+            return (
+                future_question,
+                "NAME",
+                suggested_protocol_pool,
+                ["رسمی", "دوستانه"],
+                not_understanding,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
 
     # Feeling
     elif state == "FEELING":
@@ -1105,21 +1125,21 @@ def information_retrieval_module(
                 dof,
                 previous_questions_embeddings,
             )
-        elif dof == 1:
-            previous_questions_embeddings, future_question = embedding_generator(
-                model, previous_questions_embeddings, feelingـformal
-            )
-            return (
-                future_question,
-                "EMOTION_VERIFIER",
-                suggested_protocol_pool,
-                ["خوشحالم", "ناراحتم"],
-                addtionals_lst,
-                addtional_num,
-                name,
-                dof,
-                previous_questions_embeddings,
-            )
+        # elif dof == 1:
+        previous_questions_embeddings, future_question = embedding_generator(
+            model, previous_questions_embeddings, feelingـformal
+        )
+        return (
+            future_question,
+            "EMOTION_VERIFIER",
+            suggested_protocol_pool,
+            ["خوشحالم", "ناراحتم"],
+            addtionals_lst,
+            addtional_num,
+            name,
+            dof,
+            previous_questions_embeddings,
+        )
 
     # Ask if detected feeling is correct?
     elif state == "EMOTION_VERIFIER":
@@ -1140,21 +1160,21 @@ def information_retrieval_module(
                 dof,
                 previous_questions_embeddings,
             )
-        elif dof == 1:
-            previous_questions_embeddings, future_question = embedding_generator(
-                model, previous_questions_embeddings, emotion_verifierـformal
-            )
-            return (
-                future_question.replace("X", XX).replace("Z", ZZ),
-                "EMOTION_VERIFIER2",
-                suggested_protocol_pool,
-                ["بله", "خیر"],
-                addtionals_lst,
-                addtional_num,
-                name,
-                dof,
-                previous_questions_embeddings,
-            )
+        # elif dof == 1:
+        previous_questions_embeddings, future_question = embedding_generator(
+            model, previous_questions_embeddings, emotion_verifierـformal
+        )
+        return (
+            future_question.replace("X", XX).replace("Z", ZZ),
+            "EMOTION_VERIFIER2",
+            suggested_protocol_pool,
+            ["بله", "خیر"],
+            addtionals_lst,
+            addtional_num,
+            name,
+            dof,
+            previous_questions_embeddings,
+        )
 
     # Check if emtion verified corre
     elif state == "EMOTION_VERIFIER2":
@@ -1180,26 +1200,24 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model,
-                        previous_questions_embeddings,
-                        if_need_any_protocolsـformal,
-                    )
-                    return (
-                        future_question,
-                        "IF_NEED_ANY_PROTOCOLS",
-                        suggested_protocol_pool,
-                        ["بله", "خیر"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
+                # elif dof == 1:
+
+                previous_questions_embeddings, future_question = embedding_generator(
+                    model,
+                    previous_questions_embeddings,
+                    if_need_any_protocolsـformal,
+                )
+                return (
+                    future_question,
+                    "IF_NEED_ANY_PROTOCOLS",
+                    suggested_protocol_pool,
+                    ["بله", "خیر"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
             elif check_emotion_positiveness(emotion) == "NEG":
                 if dof == 0:
                     (
@@ -1217,24 +1235,22 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, eventـformal
-                    )
-                    return (
-                        future_question,
-                        "EVENT",
-                        suggested_protocol_pool,
-                        ["بله", "خیر"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
+                # elif dof == 1:
+
+                previous_questions_embeddings, future_question = embedding_generator(
+                    model, previous_questions_embeddings, eventـformal
+                )
+                return (
+                    future_question,
+                    "EVENT",
+                    suggested_protocol_pool,
+                    ["بله", "خیر"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
             else:
                 if dof == 0:
                     (
@@ -1254,24 +1270,22 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, neutral_verifier_formal
-                    )
-                    return (
-                        future_question,
-                        "END",
-                        suggested_protocol_pool,
-                        ["ممنون", "متشکرم"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
+                # elif dof == 1:
+
+                previous_questions_embeddings, future_question = embedding_generator(
+                    model, previous_questions_embeddings, neutral_verifier_formal
+                )
+                return (
+                    future_question,
+                    "END",
+                    suggested_protocol_pool,
+                    ["ممنون", "متشکرم"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
         elif yes_no_detection(message) == "NO":
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(
@@ -1288,21 +1302,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, tell_emotionـformal
-                )
-                return (
-                    future_question,
-                    "EMOTION_DETECTOR",
-                    suggested_protocol_pool,
-                    ["خوشحالم", "ناراحتم"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, tell_emotionـformal
+            )
+            return (
+                future_question,
+                "EMOTION_DETECTOR",
+                suggested_protocol_pool,
+                ["خوشحالم", "ناراحتم"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
         else:
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(
@@ -1319,21 +1333,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, yes_no_formal
-                )
-                return (
-                    future_question,
-                    "EMOTION_VERIFIER2",
-                    suggested_protocol_pool,
-                    ["بله", "خیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, yes_no_formal
+            )
+            return (
+                future_question,
+                "EMOTION_VERIFIER2",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
 
     # Emotion Detector
     elif state == "EMOTION_DETECTOR":
@@ -1358,21 +1372,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, if_need_any_protocolsـformal
-                )
-                return (
-                    future_question,
-                    "IF_NEED_ANY_PROTOCOLS",
-                    suggested_protocol_pool,
-                    ["بله", "خیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, if_need_any_protocolsـformal
+            )
+            return (
+                future_question,
+                "IF_NEED_ANY_PROTOCOLS",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
         elif check_emotion_positiveness(emotion) == "NEG":
             suggested_protocol_pool.extend([17, 18, 7, 16, 15])
             if dof == 0:
@@ -1390,21 +1404,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, eventـformal
-                )
-                return (
-                    future_question,
-                    "EVENT",
-                    suggested_protocol_pool,
-                    ["بله", "خیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, eventـformal
+            )
+            return (
+                future_question,
+                "EVENT",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
         else:
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(
@@ -1421,21 +1435,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, error_formal
-                )
-                return (
-                    future_question,
-                    "FEELING",
-                    suggested_protocol_pool,
-                    ["مشکلی نیست"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, error_formal
+            )
+            return (
+                future_question,
+                "FEELING",
+                suggested_protocol_pool,
+                ["مشکلی نیست"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
 
     # Ask if user needs any protocols (in case of happiness)?
     elif state == "IF_NEED_ANY_PROTOCOLS":
@@ -1464,56 +1478,56 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, exercise_doing_formal
-                )
-                return (
-                    {
-                        "response": future_question,
-                        "title": protocol_titles[current_protocol],
-                        "details": protocols[current_protocol],
-                    },
-                    "PROTOCOL_SUGGESTING2",
-                    suggested_protocol_pool,
-                    ["نمیتونم انجامش بدم", "باشه"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
-        if yes_no_detection(message) == "NO":
-            if dof == 0:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, thanks
-                )
-                return (
-                    future_question,
-                    "END",
-                    suggested_protocol_pool,
-                    ["خدانگهدار", "روز بخیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, thanks_formal
-                )
-                return (
-                    future_question,
-                    "END",
-                    suggested_protocol_pool,
-                    ["خدانگهدار", "روز بخیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, exercise_doing_formal
+            )
+            return (
+                {
+                    "response": future_question,
+                    "title": protocol_titles[current_protocol],
+                    "details": protocols[current_protocol],
+                },
+                "PROTOCOL_SUGGESTING2",
+                suggested_protocol_pool,
+                ["نمیتونم انجامش بدم", "باشه"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
+        # if yes_no_detection(message) == "NO":
+        if dof == 0:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, thanks
+            )
+            return (
+                future_question,
+                "END",
+                suggested_protocol_pool,
+                ["خدانگهدار", "روز بخیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
+        # elif dof == 1:
+        previous_questions_embeddings, future_question = embedding_generator(
+            model, previous_questions_embeddings, thanks_formal
+        )
+        return (
+            future_question,
+            "END",
+            suggested_protocol_pool,
+            ["خدانگهدار", "روز بخیر"],
+            addtionals_lst,
+            addtional_num,
+            name,
+            dof,
+            previous_questions_embeddings,
+        )
 
     # Event
     elif state == "EVENT":
@@ -1533,21 +1547,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, timeـformal
-                )
-                return (
-                    future_question,
-                    "EVENT_TIME",
-                    suggested_protocol_pool,
-                    ["خیلی وقت پیش بوده", "اخیرا اتفاق افتاده"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, timeـformal
+            )
+            return (
+                future_question,
+                "EVENT_TIME",
+                suggested_protocol_pool,
+                ["خیلی وقت پیش بوده", "اخیرا اتفاق افتاده"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
         if yes_no_detection(message) == "NO":
             suggested_protocol_pool.extend([9])
             if dof == 0:
@@ -1565,21 +1579,33 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, additional_question_formal
-                )
-                return (
-                    future_question,
-                    "ADDITIONAL",
-                    suggested_protocol_pool,
-                    ["بله", "خیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, additional_question_formal
+            )
+            return (
+                future_question,
+                "ADDITIONAL",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
+
+        return (
+            future_question,
+            "EVENT",
+            suggested_protocol_pool,
+            ["بله", "خیر"],
+            not_understanding,
+            addtional_num,
+            name,
+            dof,
+            previous_questions_embeddings,
+        )
 
     # Ask if event was recent?
     elif state == "EVENT_TIME":
@@ -1600,21 +1626,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, additional_question_formal
-                )
-                return (
-                    future_question,
-                    "ADDITIONAL",
-                    suggested_protocol_pool,
-                    ["بله", "خیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, additional_question_formal
+            )
+            return (
+                future_question,
+                "ADDITIONAL",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
         if check_event_time(message) == "NOT_RECENT":
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(
@@ -1631,21 +1657,32 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, exercise10_distressing_formal
-                )
-                return (
-                    future_question + "\n" + protocol_generator(11),
-                    "PROTOCOL_10",
-                    suggested_protocol_pool,
-                    ["بله", "خیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, exercise10_distressing_formal
+            )
+            return (
+                future_question + "\n" + protocol_generator(11),
+                "PROTOCOL_10",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
+        return (
+            future_question,
+            "EVENT_TIME",
+            suggested_protocol_pool,
+           ["خیلی وقت پیش بوده", "اخیرا اتفاق افتاده"],
+            not_understanding,
+            addtional_num,
+            name,
+            dof,
+            previous_questions_embeddings,
+        )
 
     # Ask if protocol 10 is distressing?
     elif state == "PROTOCOL_10":
@@ -1666,21 +1703,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, additional_question_formal
-                )
-                return (
-                    future_question,
-                    "ADDITIONAL",
-                    suggested_protocol_pool,
-                    ["بله", "خیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, additional_question_formal
+            )
+            return (
+                future_question,
+                "ADDITIONAL",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
         if yes_no_detection(message) == "NO":
             suggested_protocol_pool.extend([10])
             if dof == 0:
@@ -1698,21 +1735,33 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, additional_question_formal
-                )
-                return (
-                    future_question,
-                    "ADDITIONAL",
-                    suggested_protocol_pool,
-                    ["بله", "خیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, additional_question_formal
+            )
+            return (
+                future_question,
+                "ADDITIONAL",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
+
+        return (
+            future_question,
+            "PROTOCOL_10",
+            suggested_protocol_pool,
+           ["بله", "خیر"],
+            not_understanding,
+            addtional_num,
+            name,
+            dof,
+            previous_questions_embeddings,
+        )
 
     # Additional Questions
     elif state == "ADDITIONAL":
@@ -1733,10 +1782,8 @@ def information_retrieval_module(
                 random.shuffle(suggested_protocol_pool)
                 current_protocol = suggested_protocol_pool.pop(0)
                 if dof == 0:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
+                    
+                    previous_questions_embeddings, future_question  = embedding_generator(
                         model, previous_questions_embeddings, exercise_doing
                     )
                     return (
@@ -1754,11 +1801,120 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
+                # elif dof == 1:
+                    
+                previous_questions_embeddings, future_question = embedding_generator(
+                    model, previous_questions_embeddings, exercise_doing_formal
+                )
+                return (
+                    {
+                        "response": future_question,
+                        "title": protocol_titles[current_protocol],
+                        "details": protocols[current_protocol],
+                    },
+                    "PROTOCOL_SUGGESTING2",
+                    suggested_protocol_pool,
+                    ["نمیتونم انجامش بدم", "باشه"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
+            else:
+                if dof == 0:
+                    
+                    previous_questions_embeddings, future_question  = embedding_generator(
+                        model, previous_questions_embeddings, thanks
+                    )
+                    return (
                         future_question,
-                    ) = embedding_generator(
+                        "END2",
+                        suggested_protocol_pool,
+                        ["متشکرم", "ممنون"],
+                        addtionals_lst,
+                        addtional_num,
+                        name,
+                        dof,
+                        previous_questions_embeddings,
+                    )
+                # elif dof == 1:
+                    
+                previous_questions_embeddings, future_question  = embedding_generator(
+                    model, previous_questions_embeddings, thanks_formal
+                )
+                return (
+                    future_question,
+                    "END2",
+                    suggested_protocol_pool,
+                    ["متشکرم", "ممنون"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
+
+    # Additional Questions
+    elif state == "ADDITIONAL_RESPONSE":
+        if yes_no_detection(message) == "YES":
+            suggested_protocol_pool.extend(addtionals_lst[addtional_num - 1]["YES"])
+            if addtional_num < 7:
+                if dof == 0:
+                    previous_questions_embeddings, future_question = embedding_generator(
+                        model, previous_questions_embeddings, additional_question
+                    )
+                    return (
+                        future_question,
+                        "ADDITIONAL",
+                        suggested_protocol_pool,
+                        ["بله", "خیر"],
+                        addtionals_lst,
+                        addtional_num,
+                        name,
+                        dof,
+                        previous_questions_embeddings,
+                    )
+                # elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(
+                    model, previous_questions_embeddings, additional_question_formal
+                )
+                return (
+                    future_question,
+                    "ADDITIONAL",
+                    suggested_protocol_pool,
+                    ["بله", "خیر"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
+            else:
+                if len(suggested_protocol_pool) > 0:
+                    random.shuffle(suggested_protocol_pool)
+                    current_protocol = suggested_protocol_pool.pop(0)
+                    if dof == 0:
+                        previous_questions_embeddings, future_question = embedding_generator(
+                            model, previous_questions_embeddings, exercise_doing
+                        )
+                        return (
+                            {
+                                "response": future_question,
+                                "title": protocol_titles[current_protocol],
+                                "details": protocols[current_protocol],
+                            },
+                            "PROTOCOL_SUGGESTING2",
+                            suggested_protocol_pool,
+                            ["نمیتونم انجامش بدم", "باشه"],
+                            addtionals_lst,
+                            addtional_num,
+                            name,
+                            dof,
+                            previous_questions_embeddings,
+                        )
+                    # elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(
                         model, previous_questions_embeddings, exercise_doing_formal
                     )
                     return (
@@ -1776,30 +1932,24 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-            else:
-                if dof == 0:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, thanks
-                    )
-                    return (
-                        future_question,
-                        "END2",
-                        suggested_protocol_pool,
-                        ["متشکرم", "ممنون"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
+                else:
+                    if dof == 0:
+                        previous_questions_embeddings, future_question  = embedding_generator(
+                            model, previous_questions_embeddings, thanks
+                        )
+                        return (
+                            future_question,
+                            "END2",
+                            suggested_protocol_pool,
+                            ["متشکرم", "ممنون"],
+                            addtionals_lst,
+                            addtional_num,
+                            name,
+                            dof,
+                            previous_questions_embeddings,
+                        )
+                    # elif dof == 1:
+                    previous_questions_embeddings, future_question = embedding_generator(
                         model, previous_questions_embeddings, thanks_formal
                     )
                     return (
@@ -1814,141 +1964,11 @@ def information_retrieval_module(
                         previous_questions_embeddings,
                     )
 
-    # Additional Questions
-    elif state == "ADDITIONAL_RESPONSE":
-        if yes_no_detection(message) == "YES":
-            suggested_protocol_pool.extend(addtionals_lst[addtional_num - 1]["YES"])
-            if addtional_num < 7:
-                if dof == 0:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, additional_question
-                    )
-                    return (
-                        future_question,
-                        "ADDITIONAL",
-                        suggested_protocol_pool,
-                        ["بله", "خیر"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, additional_question_formal
-                    )
-                    return (
-                        future_question,
-                        "ADDITIONAL",
-                        suggested_protocol_pool,
-                        ["بله", "خیر"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
-            else:
-                if len(suggested_protocol_pool) > 0:
-                    random.shuffle(suggested_protocol_pool)
-                    current_protocol = suggested_protocol_pool.pop(0)
-                    if dof == 0:
-                        (
-                            previous_questions_embeddings,
-                            future_question,
-                        ) = embedding_generator(
-                            model, previous_questions_embeddings, exercise_doing
-                        )
-                        return (
-                            {
-                                "response": future_question,
-                                "title": protocol_titles[current_protocol],
-                                "details": protocols[current_protocol],
-                            },
-                            "PROTOCOL_SUGGESTING2",
-                            suggested_protocol_pool,
-                            ["نمیتونم انجامش بدم", "باشه"],
-                            addtionals_lst,
-                            addtional_num,
-                            name,
-                            dof,
-                            previous_questions_embeddings,
-                        )
-                    elif dof == 1:
-                        (
-                            previous_questions_embeddings,
-                            future_question,
-                        ) = embedding_generator(
-                            model, previous_questions_embeddings, exercise_doing_formal
-                        )
-                        return (
-                            {
-                                "response": future_question,
-                                "title": protocol_titles[current_protocol],
-                                "details": protocols[current_protocol],
-                            },
-                            "PROTOCOL_SUGGESTING2",
-                            suggested_protocol_pool,
-                            ["نمیتونم انجامش بدم", "باشه"],
-                            addtionals_lst,
-                            addtional_num,
-                            name,
-                            dof,
-                            previous_questions_embeddings,
-                        )
-                else:
-                    if dof == 0:
-                        (
-                            previous_questions_embeddings,
-                            future_question,
-                        ) = embedding_generator(
-                            model, previous_questions_embeddings, thanks
-                        )
-                        return (
-                            future_question,
-                            "END2",
-                            suggested_protocol_pool,
-                            ["متشکرم", "ممنون"],
-                            addtionals_lst,
-                            addtional_num,
-                            name,
-                            dof,
-                            previous_questions_embeddings,
-                        )
-                    elif dof == 1:
-                        (
-                            previous_questions_embeddings,
-                            future_question,
-                        ) = embedding_generator(
-                            model, previous_questions_embeddings, thanks_formal
-                        )
-                        return (
-                            future_question,
-                            "END2",
-                            suggested_protocol_pool,
-                            ["متشکرم", "ممنون"],
-                            addtionals_lst,
-                            addtional_num,
-                            name,
-                            dof,
-                            previous_questions_embeddings,
-                        )
-
         if yes_no_detection(message) == "NO":
             suggested_protocol_pool.extend(addtionals_lst[addtional_num - 1]["NO"])
             if addtional_num < 7:
                 if dof == 0:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
+                    previous_questions_embeddings, future_question  = embedding_generator(
                         model, previous_questions_embeddings, additional_question
                     )
                     return (
@@ -1962,24 +1982,21 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, additional_question_formal
-                    )
-                    return (
-                        future_question,
-                        "ADDITIONAL",
-                        suggested_protocol_pool,
-                        ["بله", "خیر"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
+                # elif dof == 1:
+                previous_questions_embeddings, future_question,  = embedding_generator(
+                    model, previous_questions_embeddings, additional_question_formal
+                )
+                return (
+                    future_question,
+                    "ADDITIONAL",
+                    suggested_protocol_pool,
+                    ["بله", "خیر"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
             else:
                 if len(suggested_protocol_pool) > 0:
                     random.shuffle(suggested_protocol_pool)
@@ -2006,34 +2023,28 @@ def information_retrieval_module(
                             dof,
                             previous_questions_embeddings,
                         )
-                    elif dof == 1:
-                        (
-                            previous_questions_embeddings,
-                            future_question,
-                        ) = embedding_generator(
-                            model, previous_questions_embeddings, exercise_doing_formal
-                        )
-                        return (
-                            {
-                                "response": future_question,
-                                "title": protocol_titles[current_protocol],
-                                "details": protocols[current_protocol],
-                            },
-                            "PROTOCOL_SUGGESTING2",
-                            suggested_protocol_pool,
-                            ["نمیتونم انجامش بدم", "باشه"],
-                            addtionals_lst,
-                            addtional_num,
-                            name,
-                            dof,
-                            previous_questions_embeddings,
-                        )
+                    # elif dof == 1:
+                    previous_questions_embeddings, future_question,  = embedding_generator(
+                        model, previous_questions_embeddings, exercise_doing_formal
+                    )
+                    return (
+                        {
+                            "response": future_question,
+                            "title": protocol_titles[current_protocol],
+                            "details": protocols[current_protocol],
+                        },
+                        "PROTOCOL_SUGGESTING2",
+                        suggested_protocol_pool,
+                        ["نمیتونم انجامش بدم", "باشه"],
+                        addtionals_lst,
+                        addtional_num,
+                        name,
+                        dof,
+                        previous_questions_embeddings,
+                    )
                 else:
                     if dof == 0:
-                        (
-                            previous_questions_embeddings,
-                            future_question,
-                        ) = embedding_generator(
+                        previous_questions_embeddings, future_question, = embedding_generator(
                             model, previous_questions_embeddings, thanks
                         )
                         return (
@@ -2047,24 +2058,21 @@ def information_retrieval_module(
                             dof,
                             previous_questions_embeddings,
                         )
-                    elif dof == 1:
-                        (
-                            previous_questions_embeddings,
-                            future_question,
-                        ) = embedding_generator(
-                            model, previous_questions_embeddings, thanks_formal
-                        )
-                        return (
-                            future_question,
-                            "END2",
-                            suggested_protocol_pool,
-                            ["متشکرم", "ممنون"],
-                            addtionals_lst,
-                            addtional_num,
-                            name,
-                            dof,
-                            previous_questions_embeddings,
-                        )
+                    # elif dof == 1:
+                    previous_questions_embeddings, future_question,  = embedding_generator(
+                        model, previous_questions_embeddings, thanks_formal
+                    )
+                    return (
+                        future_question,
+                        "END2",
+                        suggested_protocol_pool,
+                        ["متشکرم", "ممنون"],
+                        addtionals_lst,
+                        addtional_num,
+                        name,
+                        dof,
+                        previous_questions_embeddings,
+                    )
 
     # Protocol Suggesting
     elif state == "PROTOCOL_SUGGESTING":
@@ -2090,25 +2098,25 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, exercise_doing_formal
-                )
-                return (
-                    {
-                        "response": future_question,
-                        "title": protocol_titles[current_protocol],
-                        "details": protocols[current_protocol],
-                    },
-                    "PROTOCOL_SUGGESTING2",
-                    suggested_protocol_pool,
-                    ["نمیتونم انجامش بدم", "باشه"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, exercise_doing_formal
+            )
+            return (
+                {
+                    "response": future_question,
+                    "title": protocol_titles[current_protocol],
+                    "details": protocols[current_protocol],
+                },
+                "PROTOCOL_SUGGESTING2",
+                suggested_protocol_pool,
+                ["نمیتونم انجامش بدم", "باشه"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
         else:
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(
@@ -2125,21 +2133,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, thanks_formal
-                )
-                return (
-                    future_question,
-                    "END2",
-                    suggested_protocol_pool,
-                    ["متشکرم", "ممنون"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, thanks_formal
+            )
+            return (
+                future_question,
+                "END2",
+                suggested_protocol_pool,
+                ["متشکرم", "ممنون"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
 
     elif state == "PROTOCOL_SUGGESTING2":
         if yes_no_detection(message) == "YES":
@@ -2158,28 +2166,25 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, exercise_feeling_formal
-                )
-                return (
-                    future_question,
-                    "PROTOCOL_SUGGESTING3",
-                    suggested_protocol_pool,
-                    ["هنوز خوب نیستم", "بهترم"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, exercise_feeling_formal
+            )
+            return (
+                future_question,
+                "PROTOCOL_SUGGESTING3",
+                suggested_protocol_pool,
+                ["هنوز خوب نیستم", "بهترم"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
         if yes_no_detection(message) == "NO":
             if len(suggested_protocol_pool) > 0:
                 if dof == 0:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
+                    previous_questions_embeddings, future_question  = embedding_generator(
                         model, previous_questions_embeddings, more_exercises
                     )
                     return (
@@ -2193,30 +2198,24 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, more_exercises_formal
-                    )
-                    return (
-                        future_question,
-                        "PROTOCOL_SUGGESTING_AGAIN",
-                        suggested_protocol_pool,
-                        ["بله", "خیر"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
+                # elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(
+                    model, previous_questions_embeddings, more_exercises_formal
+                )
+                return (
+                    future_question,
+                    "PROTOCOL_SUGGESTING_AGAIN",
+                    suggested_protocol_pool,
+                    ["بله", "خیر"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
             else:
                 if dof == 0:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
+                    previous_questions_embeddings, future_question  = embedding_generator(
                         model, previous_questions_embeddings, thanks
                     )
                     return (
@@ -2230,24 +2229,21 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, thanks_formal
-                    )
-                    return (
-                        future_question,
-                        "END2",
-                        suggested_protocol_pool,
-                        ["متشکرم", "ممنون"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
+                # elif dof == 1:
+                previous_questions_embeddings, future_question = embedding_generator(
+                    model, previous_questions_embeddings, thanks_formal
+                )
+                return (
+                    future_question,
+                    "END2",
+                    suggested_protocol_pool,
+                    ["متشکرم", "ممنون"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
 
     elif state == "PROTOCOL_SUGGESTING_AGAIN":
         if yes_no_detection(message) == "YES":
@@ -2255,10 +2251,7 @@ def information_retrieval_module(
                 random.shuffle(suggested_protocol_pool)
                 current_protocol = suggested_protocol_pool.pop(0)
                 if dof == 0:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
+                    previous_questions_embeddings, future_question  = embedding_generator(
                         model, previous_questions_embeddings, exercise_doing
                     )
                     return (
@@ -2276,28 +2269,25 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, exercise_doing_formal
-                    )
-                    return (
-                        {
-                            "response": future_question,
-                            "title": protocol_titles[current_protocol],
-                            "details": protocols[current_protocol],
-                        },
-                        "PROTOCOL_SUGGESTING2",
-                        suggested_protocol_pool,
-                        ["نمیتونم انجامش بدم", "باشه"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
+                # elif dof == 1:
+                previous_questions_embeddings, future_question  = embedding_generator(
+                    model, previous_questions_embeddings, exercise_doing_formal
+                )
+                return (
+                    {
+                        "response": future_question,
+                        "title": protocol_titles[current_protocol],
+                        "details": protocols[current_protocol],
+                    },
+                    "PROTOCOL_SUGGESTING2",
+                    suggested_protocol_pool,
+                    ["نمیتونم انجامش بدم", "باشه"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
             else:
                 if dof == 0:
                     (
@@ -2317,24 +2307,21 @@ def information_retrieval_module(
                         dof,
                         previous_questions_embeddings,
                     )
-                elif dof == 1:
-                    (
-                        previous_questions_embeddings,
-                        future_question,
-                    ) = embedding_generator(
-                        model, previous_questions_embeddings, thanks_formal
-                    )
-                    return (
-                        future_question,
-                        "END2",
-                        suggested_protocol_pool,
-                        ["متشکرم", "ممنون"],
-                        addtionals_lst,
-                        addtional_num,
-                        name,
-                        dof,
-                        previous_questions_embeddings,
-                    )
+                # elif dof == 1:
+                previous_questions_embeddings, future_question  = embedding_generator(
+                    model, previous_questions_embeddings, thanks_formal
+                )
+                return (
+                    future_question,
+                    "END2",
+                    suggested_protocol_pool,
+                    ["متشکرم", "ممنون"],
+                    addtionals_lst,
+                    addtional_num,
+                    name,
+                    dof,
+                    previous_questions_embeddings,
+                )
         if yes_no_detection(message) == "NO":
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(
@@ -2351,21 +2338,32 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, thanks_formal
-                )
-                return (
-                    future_question,
-                    "END2",
-                    suggested_protocol_pool,
-                    ["متشکرم", "ممنون"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, thanks_formal
+            )
+            return (
+                future_question,
+                "END2",
+                suggested_protocol_pool,
+                ["متشکرم", "ممنون"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
+        return (
+                future_question,
+                "PROTOCOL_SUGGESTING_AGAIN",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                not_understanding,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
 
     # Protocol Suggesting
     elif state == "PROTOCOL_SUGGESTING3":
@@ -2385,21 +2383,21 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, more_exercises_formal
-                )
-                return (
-                    future_question,
-                    "PROTOCOL_SUGGESTING_AGAIN",
-                    suggested_protocol_pool,
-                    ["بله", "خیر"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, more_exercises_formal
+            )
+            return (
+                future_question,
+                "PROTOCOL_SUGGESTING_AGAIN",
+                suggested_protocol_pool,
+                ["بله", "خیر"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
         else:
             if dof == 0:
                 previous_questions_embeddings, future_question = embedding_generator(
@@ -2416,53 +2414,53 @@ def information_retrieval_module(
                     dof,
                     previous_questions_embeddings,
                 )
-            elif dof == 1:
-                previous_questions_embeddings, future_question = embedding_generator(
-                    model, previous_questions_embeddings, thanks_formal
-                )
-                return (
-                    future_question,
-                    "END2",
-                    suggested_protocol_pool,
-                    ["متشکرم", "ممنون"],
-                    addtionals_lst,
-                    addtional_num,
-                    name,
-                    dof,
-                    previous_questions_embeddings,
-                )
+            # elif dof == 1:
+            previous_questions_embeddings, future_question = embedding_generator(
+                model, previous_questions_embeddings, thanks_formal
+            )
+            return (
+                future_question,
+                "END2",
+                suggested_protocol_pool,
+                ["متشکرم", "ممنون"],
+                addtionals_lst,
+                addtional_num,
+                name,
+                dof,
+                previous_questions_embeddings,
+            )
 
     # Emotion Rating
-    if dof == 0:
-        previous_questions_embeddings, future_question = embedding_generator(
-            model, previous_questions_embeddings, thanks
-        )
-        return (
-            future_question,
-            "END2",
-            suggested_protocol_pool,
-            ["متشکرم", "ممنون"],
-            addtionals_lst,
-            addtional_num,
-            name,
-            dof,
-            previous_questions_embeddings,
-        )
-    elif dof == 1:
-        previous_questions_embeddings, future_question = embedding_generator(
-            model, previous_questions_embeddings, thanks_formal
-        )
-        return (
-            future_question,
-            "END2",
-            suggested_protocol_pool,
-            ["متشکرم", "ممنون"],
-            addtionals_lst,
-            addtional_num,
-            name,
-            dof,
-            previous_questions_embeddings,
-        )
+    # if dof == 0:
+    #     previous_questions_embeddings, future_question = embedding_generator(
+    #         model, previous_questions_embeddings, thanks
+    #     )
+    #     return (
+    #         future_question,
+    #         "END2",
+    #         suggested_protocol_pool,
+    #         ["متشکرم", "ممنون"],
+    #         addtionals_lst,
+    #         addtional_num,
+    #         name,
+    #         dof,
+    #         previous_questions_embeddings,
+    #     )
+    # # elif dof == 1:
+    # previous_questions_embeddings, future_question = embedding_generator(
+    #     model, previous_questions_embeddings, thanks_formal
+    # )
+    # return (
+    #     future_question,
+    #     "END2",
+    #     suggested_protocol_pool,
+    #     ["متشکرم", "ممنون"],
+    #     addtionals_lst,
+    #     addtional_num,
+    #     name,
+    #     dof,
+    #     previous_questions_embeddings,
+    # )
 
     # Ease of Use
 
@@ -2483,21 +2481,21 @@ def information_retrieval_module(
                 dof,
                 previous_questions_embeddings,
             )
-        elif dof == 1:
-            previous_questions_embeddings, future_question = embedding_generator(
-                model, previous_questions_embeddings, thanks_formal
-            )
-            return (
-                future_question,
-                "END2",
-                suggested_protocol_pool,
-                ["متشکرم", "ممنون"],
-                addtionals_lst,
-                addtional_num,
-                name,
-                dof,
-                previous_questions_embeddings,
-            )
+        # elif dof == 1:
+        previous_questions_embeddings, future_question = embedding_generator(
+            model, previous_questions_embeddings, thanks_formal
+        )
+        return (
+            future_question,
+            "END2",
+            suggested_protocol_pool,
+            ["متشکرم", "ممنون"],
+            addtionals_lst,
+            addtional_num,
+            name,
+            dof,
+            previous_questions_embeddings,
+        )
 
     # End of Conversation
     elif state == "END2":
@@ -2512,4 +2510,17 @@ def information_retrieval_module(
             dof,
             previous_questions_embeddings,
         )
-    return
+    previous_questions_embeddings, future_question = random_generator(
+            greeting, previous_questions_embeddings, model
+        )
+    return (
+            future_question,
+            "FORMALITY",
+            suggested_protocol_pool,
+            ["سلام", "درود"],
+            addtionals_lst,
+            addtional_num,
+            name,
+            dof,
+            previous_questions_embeddings,
+        )
