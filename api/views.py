@@ -14,6 +14,7 @@ from core import main
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from urllib.parse import unquote
+from .models import Chat as ChatModel
 
 
 class Chat(APIView):
@@ -30,9 +31,10 @@ class Chat(APIView):
     protocol = ""
     last_state = "GREETING"
     users_state = {}
+    suggested_protocol_pool_state = {}
 
     def post(self, request):
-        decoded_text = unquote(request.body)
+        decoded_text = unquote(request.body.decode("utf-8"))
         print("boddyyyyyy", decoded_text)
 
         if "message" not in decoded_text:
@@ -60,10 +62,13 @@ class Chat(APIView):
         # Chat.last_state = Chat.state
         # ###
 
+        if username not in Chat.suggested_protocol_pool_state:
+            Chat.suggested_protocol_pool_state[username] = []
+
         (
             res,
             Chat.users_state[username],
-            Chat.suggested_protocol_pool,
+            Chat.suggested_protocol_pool_state[username],
             Chat.buttons,
             Chat.additionals,
             Chat.addtional_num,
@@ -73,7 +78,7 @@ class Chat(APIView):
         ) = main.information_retrieval_module(
             Chat.users_state[username],
             message,
-            Chat.suggested_protocol_pool,
+            Chat.suggested_protocol_pool_state[username],
             Chat.additionals,
             Chat.addtional_num,
             Chat.name,
@@ -89,6 +94,17 @@ class Chat(APIView):
         #     with open("../core/daily_diary.txt", "a") as f:
         #         f.write("protocol:", Chat.protocol, "message:", message)
         ###
+
+        # Create a new chat entry
+        chat_entry = ChatModel(
+            username=username,
+            user_text=message,
+            bot_text=res,
+            state=Chat.users_state[username],
+        )
+
+        # Save the chat entry to the database
+        chat_entry.save()
 
         if Chat.users_state[username] != Chat.FINAL_STATE:
             if res is str:
